@@ -1,6 +1,18 @@
 # MATLAB Mex wrapper for PESQ (Perceptual Evaluation of Speech Quality)
 
+I modified some lines of code to solve linker errors when using MEX compiler.
 
-## usage
+It maybe useful if you encountered similar errors.
 
-   $mex *.c -output PQSQ_MEX 
+## Usage
+
+1. using MATLAB run `compile_test.m` if you want to compile the source code.
+    
+2. after compiling, adding './bin' into MATLAB path.
+
+```matlab
+addpath('./bin/');
+```
+
+3. using `pesq_mex.m` function to compute PESQ. (there are examples in `compile_test.m` file.)
+
