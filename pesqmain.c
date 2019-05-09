@@ -11,7 +11,7 @@
 // #define ITU_RESULTS_FILE          "pesq_results.txt"
 
 extern int Nb;
-double compute(int argc, const char *argv [], 
+double compute(int argc, char **argv , 
         float* reference, int ref_len, float* degraded, int deg_len);
 void usage (void);
 void pesq_measure (SIGNAL_INFO * ref_info, SIGNAL_INFO * deg_info,
@@ -85,7 +85,7 @@ void usage (void) {
 
 
 
-double compute(int argc, const char *argv [], 
+double compute(int argc, char **argv, 
         float* reference, int ref_len, float* degraded, int deg_len){
     int  arg;
     int  names = 0;

@@ -781,7 +781,7 @@ void split_align( SIGNAL_INFO * ref_info, SIGNAL_INFO * deg_info,
                     Hsum += n_max * kernel;
                     for( k = 1-kernel; k < kernel; k++ )
                         H[(count + k + Align_Nfft) % Align_Nfft] +=
-                            n_max * (kernel - (float) fabs(k));
+                            n_max * (kernel - (float) labs(k));
                 }
 
             startr += (Align_Nfft / 4);
@@ -846,7 +846,7 @@ void split_align( SIGNAL_INFO * ref_info, SIGNAL_INFO * deg_info,
                             Hsum += n_max * kernel;
                             for( k = 1-kernel; k < kernel; k++ )
                                 H[(count + k + Align_Nfft) % Align_Nfft] +=
-                                    n_max * (kernel - (float) fabs(k));
+                                    n_max * (kernel - (float) labs(k));
                         }
 
                     startr += (Align_Nfft / 4);
@@ -939,7 +939,7 @@ void split_align( SIGNAL_INFO * ref_info, SIGNAL_INFO * deg_info,
                     Hsum += n_max * kernel;
                     for( k = 1-kernel; k < kernel; k++ )
                         H[(count + k + Align_Nfft) % Align_Nfft] +=
-                            n_max * (kernel - (float) fabs(k));
+                            n_max * (kernel - (float) labs(k));
                 }
 
             startr -= (Align_Nfft / 4);
@@ -1004,7 +1004,7 @@ void split_align( SIGNAL_INFO * ref_info, SIGNAL_INFO * deg_info,
                             Hsum += n_max * kernel;
                             for( k = 1-kernel; k < kernel; k++ )
                                 H[(count + k + Align_Nfft) % Align_Nfft] +=
-                                    n_max * (kernel - (float) fabs(k));
+                                    n_max * (kernel - (float) labs(k));
                         }
 
                     startr -= (Align_Nfft / 4);
@@ -1033,7 +1033,7 @@ void split_align( SIGNAL_INFO * ref_info, SIGNAL_INFO * deg_info,
 
     for( bp = 0; bp < N_BPs; bp++ )
     {
-        if( (abs(Utt_D2[bp] - Utt_D1[bp]) >= Downsample) &&
+        if( (labs(Utt_D2[bp] - Utt_D1[bp]) >= Downsample) &&
             ((Utt_DC1[bp] + Utt_DC2[bp]) > ((*Best_DC1) + (*Best_DC2))) &&
             (Utt_DC1[bp] > Utt_DelayConf) && (Utt_DC2[bp] > Utt_DelayConf) )
             {

@@ -11,10 +11,10 @@ Version 2.0 - October 2005.
 DEFINITIONS:
 ------------
 For the purposes of this Intellectual Property Rights Notice
-the terms ‘Perceptual Evaluation of Speech Quality Algorithm’
-and ‘PESQ Algorithm’ refer to the objective speech quality
+the terms ï¿½Perceptual Evaluation of Speech Quality Algorithmï¿½
+and ï¿½PESQ Algorithmï¿½ refer to the objective speech quality
 measurement algorithm defined in ITU-T Recommendation P.862;
-the term ‘PESQ Software’ refers to the C-code component of P.862.
+the term ï¿½PESQ Softwareï¿½ refers to the C-code component of P.862.
 These definitions also apply to those parts of ITU-T Recommendation 
 P.862.2 and its associated source code that are common with P.862.
 
@@ -365,9 +365,10 @@ void load_src( long * Error_Flag, char ** Error_Type,
     }
      */
     read_count = Nsamples;
+    float * input_data_copy = input_data;
     while( read_count > 0 ){
         read_count--;
-        *(read_ptr++) = (float)(*(input_data++));
+        *(read_ptr++) = (float)(*(input_data_copy++));
     }
 
 
@@ -376,7 +377,7 @@ void load_src( long * Error_Flag, char ** Error_Type,
       *(read_ptr++) = 0.0f;
 
     //fclose( Src_file );
-   // safe_free( input_data );
+    safe_free( input_data );
 
     sinfo-> VAD = safe_malloc( sinfo-> Nsamples * sizeof(float) / Downsample );
     sinfo-> logVAD = safe_malloc( sinfo-> Nsamples * sizeof(float) / Downsample );

@@ -1074,7 +1074,7 @@ void pesq_psychoacoustic_model(SIGNAL_INFO    * ref_info,
             
         if (delay_jump < -(int) (Nf / 2)) {
 
-            int frame2 = (int) ((err_info-> Utt_Start [utt] - SEARCHBUFFER) * Downsample + max (0, fabs (delay_jump))) / (Nf / 2) + 1; 
+            int frame2 = (int) ((err_info-> Utt_Start [utt] - SEARCHBUFFER) * Downsample + max (0, abs (delay_jump))) / (Nf / 2) + 1; 
             
             for (frame = frame1; frame <= frame2; frame++)  {
                 if (frame < stop_frame) {
