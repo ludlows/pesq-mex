@@ -16,3 +16,7 @@ addpath('./bin/');
 
 3. using `pesq_mex.m` function to compute PESQ. (there are examples in `compile_test.m` file.)
 
+## About Python Wrapper for PESQ score
+if you like using python to compute PESQ score, you may interested in this implementation: 
+
+https://github.com/ludlows/python-pesq
